@@ -17,7 +17,10 @@ public class Player {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    static void getNSFs() {}
+
+    static void getNSFs() {
+
+    }
 
     @Override
     public String toString() {

@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class ISF {
-    String name;
+    private String name;
+    private ArrayList<NSF> nsfs;
+
     public ISF(String name) {
         this.name = name;
+        this.nsfs = null;
     }
 
     public String getName() {
@@ -12,8 +17,21 @@ public class ISF {
         this.name = name;
     }
 
-    static void getNSF() {}
-    static void addNSF() {}
-    static void countNSFs() {}
+    public ArrayList<NSF> getNSF() {
+        return nsfs;
+    }
+
+    public void addNSF(NSF nsf) {
+        if (nsfs == null) {
+            nsfs = new ArrayList<>();
+        }
+        nsfs.add(nsf);
+    }
+    public int countNSFs() {
+        if (nsfs == null) {
+            return 0;
+        }
+        return nsfs.size();
+    }
     static void countPlayerInNSFs() {}
 }

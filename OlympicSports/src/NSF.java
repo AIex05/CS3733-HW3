@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class NSF {
-    public String sport;
-    public String country;
+    private String sport;
+    private String country;
+    private ArrayList<Player> players;
 
     public NSF(String country, String sport) {
         this.country = country;
@@ -19,8 +22,12 @@ public class NSF {
         this.country = country;
     }
 
-    public void getPlayers() {}
-    static void setPlayers() {}
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+    public void setPlayers(ArrayList<Player> newPlayers) {
+        this.players = newPlayers;
+    }
 
     @Override
     public String toString() {

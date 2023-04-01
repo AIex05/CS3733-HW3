@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+
 public class IOC {
-    String name;
+    private String name;
+    private ArrayList<ISF> isfs;
 
     public IOC(String name) {
         this.name = name;
+        this.isfs = null;
     }
 
     public String getName() {
@@ -13,8 +17,22 @@ public class IOC {
         this.name = name;
     }
 
-    static void getISF() {}
-    static void setISF() {}
-    static void countNSF() {}
+    public ArrayList<ISF> getISF() {
+        return isfs;
+    }
+
+    public void setISF(ArrayList<ISF> ISFs) {
+        this.isfs = ISFs;
+    }
+
+    public int countNSF() {
+        ArrayList<ISF> ISFs = getISF();
+        int temp = 0;
+        for (ISF isf : ISFs) {
+            temp = temp + isf.countNSFs();
+        }
+        return temp;
+    }
+
     static void countPlayerInNSF() {}
 }
