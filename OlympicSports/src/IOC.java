@@ -2,19 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 class IOC {
-    private String continent;
+    private String name;
     private List<ISF> isfs;
 
-    public IOC(String continent) {
-        this.continent = continent;
+    IOC(String continent) {
+        this.name = continent;
         this.isfs = new ArrayList<>();
     }
 
-    public void addISF(ISF isf) {
+    void addISF(ISF isf) {
         this.isfs.add(isf);
     }
 
-    public int countNSFs() {
+    int countNSFs() {
         int count = 0;
         for (ISF isf : isfs) {
             count += isf.countNSFs();
@@ -22,7 +22,7 @@ class IOC {
         return count;
     }
 
-    public int countPlayersinISFNSFs() {
+    int countPlayersinISFNSFs() {
         int count = 0;
         for (ISF isf : isfs) {
             count += isf.countPlayersInNSFs();
@@ -30,6 +30,3 @@ class IOC {
         return count;
     }
 }
-
-
-

@@ -45,17 +45,6 @@ class OlympicSports {
         nsf5.addPlayer(player14);
         nsf5.addPlayer(player15);
 
-        // Add NSFs to players
-        player1.addNSF(nsf1);
-        player2.addNSF(nsf1);
-        player3.addNSF(nsf1);
-        player4.addNSF(nsf2);
-        player5.addNSF(nsf2);
-        player6.addNSF(nsf2);
-        player7.addNSF(nsf3);
-        player8.addNSF(nsf3);
-        player9.addNSF(nsf3);
-
         // Add 3 players to another NSFs
         nsf2.addPlayer(player1);
         nsf2.addPlayer(player2);

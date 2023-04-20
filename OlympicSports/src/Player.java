@@ -12,8 +12,37 @@ class Player {
         this.nsfs = new ArrayList<>();
     }
 
+    public String getFirstname() {
+        return firstName;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstName = firstname;
+    }
+
+    public String getLastname() {
+        return lastName;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastName = lastname;
+    }
+
+    public List<NSF> getNSFs() {
+        return nsfs;
+    }
+
+    public void setNSFs(List<NSF> nsf) {
+        nsfs = nsf;
+    }
+
     public void addNSF(NSF nsf) {
-        this.nsfs.add(nsf);
+        if (!nsfs.contains(nsf)) {
+            nsfs.add(nsf);
+        }
+        if (!nsf.getPlayers().contains(this)) {
+            nsf.addPlayer(this);
+        }
     }
 
     public String getName() {

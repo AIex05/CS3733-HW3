@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class NSF {
-    private String country;
-    private String sport;
-    private List<Player> players;
+    protected String country;
+    protected String sport;
+    protected List<Player> players;
 
     public NSF(String country, String sport) {
         this.country = country;
@@ -12,8 +12,33 @@ class NSF {
         this.players = new ArrayList<>();
     }
 
+    public String getSport() {
+        return sport;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public void addPlayer(Player player) {
-        this.players.add(player);
+        if (!players.contains(player)) {
+            players.add(player);
+        }
+        if (!player.getNSFs().contains(this)) {
+            player.addNSF(this);
+        }
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 
     public int countPlayers() {
